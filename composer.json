@@ -1,0 +1,18 @@
+{
+    "name": "maximtsoy/supermetrics-test-php",
+    "description": "Test assignement on PHP software developer",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "maximtsoy",
+            "email": "maxim.tsoy.cv@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src/"
+        }
+    }
+}

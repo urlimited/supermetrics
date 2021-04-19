@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/0_supermetrics.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/ApplicationBootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/ApplicationRouter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Runnable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/Singleton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/router/Route.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/router/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1rKggS1r8FZl4STzjMsoFEpigqc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core" />
+      <recent name="$PROJECT_DIR$/Application" />
+      <recent name="$PROJECT_DIR$/core/router" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/core/router" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="" />
+      <created>1618730305540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618730305540</updated>
+      <workItem from="1618730306640" duration="2924000" />
+      <workItem from="1618846017222" duration="8223000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618854102204">
+      <screen x="0" y="25" width="1792" height="1010" />
+    </state>
+    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618854102204" />
+    <state x="617" y="324" key="refactoring.ChangeSignatureDialog" timestamp="1618851269797">
+      <screen x="0" y="25" width="1792" height="1010" />
+    </state>
+    <state x="617" y="324" key="refactoring.ChangeSignatureDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618851269797" />
+  </component>
+</project>
