@@ -9,7 +9,6 @@ use Application\Models\Analysis\PostsPerUsersPerMonthsAnalysis;
 use Application\Models\Analysis\PostsPerWeekAnalysis;
 use Application\SuperMetricsApiHandler;
 use Exception;
-use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 class StatsModel
@@ -86,8 +85,6 @@ class StatsModel
 
         $downloadedPostsCount = 0;
         $page = 1;
-
-        $client = new Client();
 
         while ($downloadedPostsCount < 1000) {
             /**
