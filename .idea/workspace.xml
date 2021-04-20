@@ -10,22 +10,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Done with application as Runnable instance">
-      <change afterPath="$PROJECT_DIR$/application/controllers/ApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/BootstrapConfigs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Controller.php" afterDir="false" />
+    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Done with Controller mechanics">
+      <change afterPath="$PROJECT_DIR$/application/entities/PostEntity.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/PostModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/StatsModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/ContainerConfigs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/0_supermetrics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/0_supermetrics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ApplicationBootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ApplicationBootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ApplicationRouter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ApplicationRouter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ApplicationBootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ApplicationContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ApiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/configs/RouterConfigs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/BootstrapConfigs.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Runnable.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Runnable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Singleton.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Singleton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Container.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +41,12 @@
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rKggS1r8FZl4STzjMsoFEpigqc" />
@@ -53,7 +58,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/configs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/models" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
@@ -65,10 +70,11 @@
       <recent name="$PROJECT_DIR$/core/router" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/models" />
+      <recent name="$PROJECT_DIR$/application/entities" />
       <recent name="$PROJECT_DIR$/configs" />
       <recent name="$PROJECT_DIR$/application" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/core/router" />
     </key>
   </component>
   <component name="RunManager">
@@ -90,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618730305540</updated>
       <workItem from="1618730306640" duration="2924000" />
-      <workItem from="1618846017222" duration="13610000" />
+      <workItem from="1618846017222" duration="20506000" />
     </task>
     <task id="LOCAL-00001" summary="Done with application as Runnable instance">
       <created>1618854277464</created>
@@ -99,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618854277464</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Done with Controller mechanics">
+      <created>1618902944727</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1618902944727</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,21 +131,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Done with application as Runnable instance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done with application as Runnable instance" />
+    <MESSAGE value="Done with Controller mechanics" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done with Controller mechanics" />
   </component>
   <component name="WindowStateProjectService">
     <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser" timestamp="1618855509976">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1010@0.25.1792.1010" timestamp="1618855509976" />
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618902220130">
+    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618907998277">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618902220130" />
-    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618902476857">
+    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618907998277" />
+    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618904257103">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618902476857" />
+    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618904257103" />
+    <state x="496" y="267" key="Vcs.Push.Dialog.v2" timestamp="1618902951475">
+      <screen x="0" y="25" width="1792" height="1010" />
+    </state>
+    <state x="496" y="267" key="Vcs.Push.Dialog.v2/0.25.1792.1010@0.25.1792.1010" timestamp="1618902951475" />
     <state x="617" y="324" key="refactoring.ChangeSignatureDialog" timestamp="1618851269797">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>

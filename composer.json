@@ -9,7 +9,11 @@
             "email": "maxim.tsoy.cv@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-memcached": "*",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-json": "*"
+    },
     "autoload": {
         "psr-4": {
             "Application\\": "./application",
