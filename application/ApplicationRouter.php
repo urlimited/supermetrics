@@ -2,6 +2,7 @@
 
 namespace Application;
 
+use Application\Controllers\ApiController;
 use Core\Router\Router;
 use Exception;
 
@@ -11,8 +12,9 @@ class ApplicationRouter extends Router
      * @return $this|ApplicationRouter
      * @throws Exception
      */
-    protected function init(): self{
-        $this->registerRoute('/', 'controller', 'method');
+    public function init(): self
+    {
+        $this->registerRoute('/', ApiController::class, 'getStatisticsOnPosts');
 
         return $this;
     }

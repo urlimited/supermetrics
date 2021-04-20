@@ -11,9 +11,14 @@ class ApplicationBootstrap extends Bootstrap
      * @return $this|ApplicationRouter
      * @throws Exception
      */
-    protected function init(): self{
+    public function init(): self{
 
 
         return $this;
+    }
+
+    function run(): void
+    {
+        // TODO: Implement run() method.
     }
 }

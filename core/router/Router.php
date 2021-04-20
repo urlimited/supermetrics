@@ -4,7 +4,7 @@ namespace Core\Router;
 
 use Core\Singleton;
 use Exception;
-use Runnable;
+use Core\Runnable;
 
 abstract class Router extends Singleton implements Runnable
 {
@@ -15,16 +15,22 @@ abstract class Router extends Singleton implements Runnable
         return $this->routes;
     }
 
-    public function getExecutableMethod(){
-        //TODO: handle exception if not matched
-        return array_filter($this->routes, function(Route $route){
+    /**
+     * @throws Exception
+     */
+    public function run(): void
+    {
+        $method = array_filter($this->routes, function (Route $route) {
             return $route->isAppropriate($_SERVER['REQUEST_URI']);
         });
+
+        if (empty($method))
+            //TODO: realize special not found exception
+            throw new Exception('');
+
+        $method[0]->runMethodController();
     }
 
-    abstract public function init(): self;
-
-    abstract public function run(): self;
 
     /**
      * @param $path

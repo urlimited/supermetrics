@@ -12,7 +12,9 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "Acme\\": "src/"
+            "Application\\": "./application",
+            "Core\\": "./core",
+            "Configs\\": "./configs"
         }
     }
 }

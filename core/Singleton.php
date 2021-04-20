@@ -6,11 +6,13 @@ use Exception;
 
 abstract class Singleton
 {
-    protected static self $instance;
+    protected function __construct()
+    {
+    }
 
-    protected function __construct(){}
-
-    protected function __clone() { }
+    final private function __clone()
+    {
+    }
 
     /**
      * @throws Exception
@@ -20,10 +22,15 @@ abstract class Singleton
         throw new Exception("Cannot unserialize a singleton.");
     }
 
-    public static function getInstance(){
-        if(!isset(self::$instance))
-            self::$instance = new static();
+    final public static function getInstance()
+    {
+        static $instances = array();
 
-        return self::$instance;
+        $calledClass = get_called_class();
+
+        if (!isset($instances[$calledClass]))
+            $instances[$calledClass] = new $calledClass();
+
+        return $instances[$calledClass];
     }
 }

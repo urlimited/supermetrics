@@ -1,13 +1,10 @@
 <?php
 
-namespace Application\Core;
+namespace Core;
 
-use BootstrapConfigs;
-use Core\Bootstrap;
+use Configs\BootstrapConfigs;
 use Core\Router\Router;
-use Core\Singleton;
-use RouterConfigs;
-use Runnable;
+use Configs\RouterConfigs;
 
 class Application extends Singleton implements Runnable
 {
@@ -18,13 +15,13 @@ class Application extends Singleton implements Runnable
 
     public function init(): self
     {
-        $this->bootstrap = (call_user_func(RouterConfigs::ROUTER_CLASS . '::getInstance'))->init();
-        $this->router = (call_user_func(BootstrapConfigs::BOOTSTRAP_CLASS . '::getInstance'))->init();
+        $this->router = (call_user_func(RouterConfigs::ROUTER_CLASS . '::getInstance'))->init();
+        $this->bootstrap = (call_user_func(BootstrapConfigs::BOOTSTRAP_CLASS . '::getInstance'))->init();
 
         return $this;
     }
 
-    public function run(): self
+    public function run(): void
     {
         $this->bootstrap->run();
         $this->router->run();
