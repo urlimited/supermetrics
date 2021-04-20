@@ -18,9 +18,9 @@ class ApiController extends Controller
         try {
             $stats = new StatsModel();
 
-            return var_dump(ApplicationContainer::getInstance()->cacheDriver->get('statistics_key'));
+            //return var_dump(ApplicationContainer::getInstance()->cacheDriver->get('statistics_key'));
 
-            //return var_dump($stats->getStats());
+            return var_dump($stats->getStats());
         } catch (Exception $e) {
             return $e->getMessage();
         } catch (GuzzleException $e) {
