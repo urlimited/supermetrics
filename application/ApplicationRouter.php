@@ -15,6 +15,7 @@ class ApplicationRouter extends Router
     public function init(): self
     {
         $this->registerRoute('/', ApiController::class, 'getStatisticsOnPosts');
+        $this->registerRoute('/update_cache', ApiController::class, 'statisticsClearCache');
 
         return $this;
     }

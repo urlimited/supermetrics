@@ -20,13 +20,13 @@ abstract class Router extends Singleton implements Runnable
      */
     public function run(): void
     {
-        $method = array_filter($this->routes, function (Route $route) {
+        $method = array_values(array_filter($this->routes, function (Route $route) {
             return $route->isAppropriate($_SERVER['REQUEST_URI']);
-        });
+        }));
 
         if (empty($method))
             //TODO: realize special not found exception
-            throw new Exception('');
+            throw new Exception('Page not found');
 
         $method[0]->runMethodController();
     }

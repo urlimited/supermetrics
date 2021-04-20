@@ -28,6 +28,15 @@ class Application extends Singleton implements Runnable
     public function run(): void
     {
         $this->bootstrap->run();
-        $this->router->run();
+
+        try {
+            $this->router->run();
+        } catch (Exception $e) {
+            echo json_encode([
+                'status' => 404,
+                'body' => 'Page not found'
+            ]);
+        }
+
     }
 }

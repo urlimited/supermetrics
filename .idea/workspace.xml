@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -10,11 +13,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Added Memcached cache driver">
+    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Done with analysis functionality requirements">
+      <change afterPath="$PROJECT_DIR$/application/SuperMetricsApiHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/exceptions/ApiTokenExpiredException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/analysis/Analysis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/analysis/AverageContentLengthPerMonthAnalysis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/analysis/LongestPostPerMonthsAnalysis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/analysis/PostsPerUsersPerMonthsAnalysis.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/models/analysis/PostsPerWeekAnalysis.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ApplicationRouter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ApplicationRouter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/PostModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/StatsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/StatsModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/Router.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +60,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/models/analysis" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
@@ -60,11 +72,11 @@
       <recent name="$PROJECT_DIR$/core/router" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/application/models/analysis" />
       <recent name="$PROJECT_DIR$/application/models" />
       <recent name="$PROJECT_DIR$/application/entities" />
       <recent name="$PROJECT_DIR$/configs" />
       <recent name="$PROJECT_DIR$/application" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -86,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618730305540</updated>
       <workItem from="1618730306640" duration="2924000" />
-      <workItem from="1618846017222" duration="26311000" />
+      <workItem from="1618846017222" duration="31462000" />
     </task>
     <task id="LOCAL-00001" summary="Done with application as Runnable instance">
       <created>1618854277464</created>
@@ -109,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618910441461</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Done with analysis functionality requirements">
+      <created>1618916176379</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618916176379</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,21 +149,26 @@
     <MESSAGE value="Done with application as Runnable instance" />
     <MESSAGE value="Done with Controller mechanics" />
     <MESSAGE value="Added Memcached cache driver" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Memcached cache driver" />
+    <MESSAGE value="Done with analysis functionality requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done with analysis functionality requirements" />
   </component>
   <component name="WindowStateProjectService">
     <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser" timestamp="1618855509976">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1010@0.25.1792.1010" timestamp="1618855509976" />
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618907998277">
+    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618916665832">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618907998277" />
-    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618904257103">
+    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618916665832" />
+    <state x="588" y="260" key="NewPhpClassDialog" timestamp="1618918528060">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618904257103" />
+    <state x="588" y="260" key="NewPhpClassDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618918528060" />
+    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618918540767">
+      <screen x="0" y="25" width="1792" height="1010" />
+    </state>
+    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618918540767" />
     <state x="496" y="267" key="Vcs.Push.Dialog.v2" timestamp="1618902951475">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
@@ -153,9 +177,9 @@
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
     <state x="617" y="324" key="refactoring.ChangeSignatureDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618851269797" />
-    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1618854320359">
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1618920342495">
       <screen x="0" y="25" width="1792" height="1010" />
     </state>
-    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup/0.25.1792.1010@0.25.1792.1010" timestamp="1618854320359" />
+    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup/0.25.1792.1010@0.25.1792.1010" timestamp="1618920342495" />
   </component>
 </project>

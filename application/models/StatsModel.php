@@ -3,7 +3,11 @@
 namespace Application\Models;
 
 use Application\ApplicationContainer;
-use Application\Entities\PostEntity;
+use Application\Models\Analysis\AverageContentLengthPerMonthAnalysis;
+use Application\Models\Analysis\LongestPostPerMonthsAnalysis;
+use Application\Models\Analysis\PostsPerUsersPerMonthsAnalysis;
+use Application\Models\Analysis\PostsPerWeekAnalysis;
+use Application\SuperMetricsApiHandler;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -15,16 +19,7 @@ class StatsModel
     public array $postsCountPerWeek;
     public array $averagePostsPerUserPerMonth;
 
-    protected array $analyzableData = [];
-
     protected const STATS_KEY = 'statistics_key';
-
-    public function __construct()
-    {
-        $stats = $this->getFromCache();
-
-
-    }
 
     /**
      * @return array
@@ -32,12 +27,10 @@ class StatsModel
      */
     public function getStats(): array
     {
-        /*$statsData = $this->getFromCache();
+        $statsData = $this->getFromCache();
 
-        if (empty($statsData) || !$statsData)
-            $this->update();*/
-
-        //$this->analyze($this->getFromCache());
+        if ($statsData !== false && !empty($statsData))
+            return $statsData;
 
         $this->update();
 
@@ -75,7 +68,12 @@ class StatsModel
      */
     protected function getFromCache()
     {
-        return ApplicationContainer::getInstance()->cacheDriver->get(self::STATS_KEY);
+        $fromCache = ApplicationContainer::getInstance()->cacheDriver->get(self::STATS_KEY);
+
+        if($fromCache['put_at'] < (time() - 60 * 60 * 24))
+            return false;
+
+        return $fromCache['data'];
     }
 
     /**
@@ -91,26 +89,20 @@ class StatsModel
 
         $client = new Client();
 
-        while($downloadedPostsCount < 1000){
-            $params = 'sl_token=smslt_edba2bacf9660_6deec1aca39f9d5&page=' . $page++;
+        while ($downloadedPostsCount < 1000) {
+            /**
+             * @var $api SuperMetricsApiHandler
+             */
+            $api = SuperMetricsApiHandler::getInstance();
 
-            $uri = 'https://api.supermetrics.com/assignment/posts' . '?' . $params;
+            $postsReceived = $api->getPosts($page);
 
-            $result = $client->request('GET', $uri);
+            $page++;
 
-            $posts = json_decode($result->getBody()->getContents(), true)['data']['posts'];
+            $postsData = array_merge($postsData, $postsReceived);
 
-            $postsData = array_merge($postsData, $posts);
-
-            $downloadedPostsCount += count($posts);
+            $downloadedPostsCount += count($postsReceived);
         }
-
-        /*$headers = [
-            'Content-Type' => 'application/x-www-form-urlencoded',
-        ];*/
-
-        //TODO change sl token
-
 
         return $postsData;
     }
@@ -123,7 +115,10 @@ class StatsModel
     {
         $processedData = $rawData;
 
-        ApplicationContainer::getInstance()->cacheDriver->set(self::STATS_KEY, $processedData);
+        ApplicationContainer::getInstance()->cacheDriver->set(self::STATS_KEY, [
+            'put_at' => time(),
+            'data' => $processedData
+        ]);
 
         return $processedData;
     }
@@ -132,152 +127,19 @@ class StatsModel
      * @param array $rawData
      * @throws Exception
      */
-    protected function analyze(array $rawData){
+    protected function analyze(array $rawData)
+    {
         $data = $rawData;
 
         $posts = [];
 
-        foreach ($data as $postData){
+        foreach ($data as $postData) {
             $posts[] = new PostModel($postData);
         }
 
-        $this->analyzableData = $posts;
-
-        $this->averageContentLengthPerMonth = $this->defineAverageContentLengthPerMonth();
-        $this->longestPostsPerMonth = $this->defineLongestPostPerMonth();
-        $this->postsCountPerWeek = $this->definePostsSplitPerWeek();
-        $this->averagePostsPerUserPerMonth = $this->defineAveragePostsPerUserPerMonth();
-    }
-
-    /**
-     * @param array $data
-     * @return int[]
-     * @throws Exception
-     */
-    private function defineAverageContentLengthPerMonth(){
-        if(empty($this->analyzableData))
-            throw new Exception('Analyzable data array should not be empty');
-
-        return array_map(function(array $monthlyPosts) {
-            $monthlyPostsLengths = array_map(function(PostModel $post){
-                return $post->getContentLength();
-            }, $monthlyPosts);
-
-            if(count($monthlyPostsLengths) === 0)
-                return 0;
-
-            return (int) round(array_sum($monthlyPostsLengths) / count($monthlyPostsLengths));
-        }, $this->splitPostsByMonths($this->analyzableData));
-    }
-
-    /**
-     * @return array
-     * @throws Exception
-     */
-    private function defineLongestPostPerMonth(){
-        if(empty($this->analyzableData))
-            throw new Exception('Analyzable data array should not be empty');
-
-        return array_map(function(array $monthlyPosts) {
-            $monthlyPostsLengths = array_map(function(PostModel $post){
-                return $post->getContentLength();
-            }, $monthlyPosts);
-
-            if(count($monthlyPostsLengths) === 0)
-                return 0;
-
-            return max($monthlyPostsLengths);
-        }, $this->splitPostsByMonths($this->analyzableData));
-    }
-
-    /**
-     * @throws Exception
-     */
-    private function definePostsSplitPerWeek(){
-        if(empty($this->analyzableData))
-            throw new Exception('Analyzable data array should not be empty');
-
-        return array_map(function(array $weeklyPosts) {
-
-            return count($weeklyPosts);
-        }, $this->splitPostsByWeeks($this->analyzableData));
-    }
-
-    /**
-     * @return array
-     * @throws Exception
-     */
-    private function defineAveragePostsPerUserPerMonth(){
-        if(empty($this->analyzableData))
-            throw new Exception('Analyzable data array should not be empty');
-
-        return array_map(function(array $perUserPosts) {
-            return array_map(function(array $monthlyPosts) {
-                $monthlyPostsLengths = array_map(function(PostModel $post){
-                    return $post->getContentLength();
-                }, $monthlyPosts);
-
-                if(count($monthlyPostsLengths) === 0)
-                    return 0;
-
-                return max($monthlyPostsLengths);
-            }, $this->splitPostsByMonths($perUserPosts));
-
-
-        }, $this->splitPostsByUsers($this->analyzableData));
-    }
-
-    private function splitPostsByMonths($posts){
-        return array_reduce($posts, function($accum, $next){
-            $monthNumber = $next->getCreatedMonth();
-
-            $accum[$monthNumber][] = $next;
-
-            return $accum;
-        }, [
-            'Jan' => [], 'Feb' => [], 'Mar' => [], 'Apr' => [], 'May' => [], 'Jun' => [], 'Jul' => [], 'Aug' => [], 'Sep' => [], 'Oct' => [], 'Nov' => [], 'Dec' => [],
-        ]);
-    }
-
-    private function splitPostsByWeeks($posts){
-        $weeks = [];
-
-        // In a year we might have 54 weeks, if the first day of the year is sunday/saturday (depends on first day in calendar)
-        for($i = 1; $i < 54; $i++){
-            $processedIncrementer = $i;
-
-            if($i < 10)
-                $processedIncrementer = '0' . $i;
-
-            $weeks[$processedIncrementer] = [];
-        }
-
-        return array_reduce($posts, function($accum, $next){
-            $weekNumber = $next->getCreatedWeek();
-
-            $accum[$weekNumber][] = $next;
-
-            return $accum;
-        }, $weeks);
-    }
-
-    private function splitPostsByUsers($posts){
-        $usersIds = array_unique(array_map(function($post){
-            return $post->getUserId();
-        }, $posts));
-
-        $usersArray = [];
-
-        foreach($usersIds as $key => $user){
-            $usersArray[$user] = [];
-        }
-
-        return array_reduce($posts, function($accum, $next){
-            $userId = $next->getUserId();
-
-            $accum[$userId][] = $next;
-
-            return $accum;
-        }, $usersArray);
+        $this->averageContentLengthPerMonth = (new AverageContentLengthPerMonthAnalysis())->performAnalysis($posts);
+        $this->longestPostsPerMonth = (new LongestPostPerMonthsAnalysis())->performAnalysis($posts);
+        $this->postsCountPerWeek = (new PostsPerWeekAnalysis())->performAnalysis($posts);
+        $this->averagePostsPerUserPerMonth = (new PostsPerUsersPerMonthsAnalysis())->performAnalysis($posts);
     }
 }
