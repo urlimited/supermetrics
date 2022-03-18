@@ -13,43 +13,53 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Done with analysis functionality requirements">
-      <change afterPath="$PROJECT_DIR$/application/SuperMetricsApiHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/exceptions/ApiTokenExpiredException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/analysis/Analysis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/analysis/AverageContentLengthPerMonthAnalysis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/analysis/LongestPostPerMonthsAnalysis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/analysis/PostsPerUsersPerMonthsAnalysis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/application/models/analysis/PostsPerWeekAnalysis.php" afterDir="false" />
+    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Refactored">
+      <change afterPath="$PROJECT_DIR$/3rd_task.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/0_supermetrics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/0_supermetrics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ApplicationRouter.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/ApplicationRouter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/StatsModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/StatsModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Application.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/router/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ApplicationContainer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/ApplicationRouter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/SuperMetricsApiHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ApiController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/entities/PostEntity.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/exceptions/ApiTokenExpiredException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/PostModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/StatsModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/analysis/Analysis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/analysis/AverageContentLengthPerMonthAnalysis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/analysis/LongestPostPerMonthsAnalysis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/analysis/PostsPerUsersPerMonthsAnalysis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/analysis/PostsPerWeekAnalysis.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/ContainerConfigs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/RouterConfigs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Container.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Runnable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/Singleton.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/router/Route.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/router/Router.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-    </include_path>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1rKggS1r8FZl4STzjMsoFEpigqc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -60,8 +70,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/models/analysis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -98,7 +109,9 @@
       <option name="presentableId" value="Default" />
       <updated>1618730305540</updated>
       <workItem from="1618730306640" duration="2924000" />
-      <workItem from="1618846017222" duration="31462000" />
+      <workItem from="1618846017222" duration="32526000" />
+      <workItem from="1618938427251" duration="1361000" />
+      <workItem from="1647588684946" duration="707000" />
     </task>
     <task id="LOCAL-00001" summary="Done with application as Runnable instance">
       <created>1618854277464</created>
@@ -128,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618916176379</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Done with API handler">
+      <created>1618921324853</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618921324853</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactored">
+      <created>1618921460332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618921460332</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,36 +177,9 @@
     <MESSAGE value="Done with Controller mechanics" />
     <MESSAGE value="Added Memcached cache driver" />
     <MESSAGE value="Done with analysis functionality requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done with analysis functionality requirements" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser" timestamp="1618855509976">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="701" y="216" key="#com.intellij.ide.util.MemberChooser/0.25.1792.1010@0.25.1792.1010" timestamp="1618855509976" />
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618916665832">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="634" y="289" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618916665832" />
-    <state x="588" y="260" key="NewPhpClassDialog" timestamp="1618918528060">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="588" y="260" key="NewPhpClassDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618918528060" />
-    <state x="716" y="457" key="NewPhpFileDialog" timestamp="1618918540767">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="716" y="457" key="NewPhpFileDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618918540767" />
-    <state x="496" y="267" key="Vcs.Push.Dialog.v2" timestamp="1618902951475">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="496" y="267" key="Vcs.Push.Dialog.v2/0.25.1792.1010@0.25.1792.1010" timestamp="1618902951475" />
-    <state x="617" y="324" key="refactoring.ChangeSignatureDialog" timestamp="1618851269797">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="617" y="324" key="refactoring.ChangeSignatureDialog/0.25.1792.1010@0.25.1792.1010" timestamp="1618851269797" />
-    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1618920342495">
-      <screen x="0" y="25" width="1792" height="1010" />
-    </state>
-    <state x="561" y="248" width="670" height="676" key="search.everywhere.popup/0.25.1792.1010@0.25.1792.1010" timestamp="1618920342495" />
+    <MESSAGE value="Done with API handler" />
+    <MESSAGE value="Done with API handlers" />
+    <MESSAGE value="Refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored" />
   </component>
 </project>
