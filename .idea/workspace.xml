@@ -13,39 +13,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Refactored">
-      <change afterPath="$PROJECT_DIR$/3rd_task.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/0_supermetrics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/0_supermetrics.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ApplicationContainer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/ApplicationRouter.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/SuperMetricsApiHandler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ApiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/entities/PostEntity.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/exceptions/ApiTokenExpiredException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/PostModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/StatsModel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/analysis/Analysis.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/analysis/AverageContentLengthPerMonthAnalysis.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/analysis/LongestPostPerMonthsAnalysis.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/analysis/PostsPerUsersPerMonthsAnalysis.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/analysis/PostsPerWeekAnalysis.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/ContainerConfigs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/RouterConfigs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Application.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Container.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Runnable.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Singleton.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Route.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/router/Router.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-    </list>
+    <list default="true" id="107768b9-7c8c-4735-91ee-a8c527c1157f" name="Default Changelist" comment="Refactored" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +28,17 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1rKggS1r8FZl4STzjMsoFEpigqc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
