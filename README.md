@@ -35,4 +35,4 @@ Sorry, but the first task is taking too long, at the moment current work we are 
 For a first test assignment, however, I can complete this task after a technical interview, or if you want to see the code
 what can I write, I opened the repository with my home project
 https://github.com/urlimited/househub/tree/master/househub_monolith_mvp/app
-The most current version is on the T6 branch. You can also find some feature tests there.
+The most actual version is on the T6 branch. You can also find some feature tests there.
